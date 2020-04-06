@@ -1,0 +1,49 @@
+
+<table border="3"style="margin: auto">
+    <tr>
+        
+        <th>Производитель</th>
+        <th>Марка</th>
+        <th>Год выпуска</th>
+        <th>Коробка передач</th>
+        <th>Цвет</th>
+    </tr>
+    {% for car in cars %}
+        <tr>
+            <td>{{ car.manufacturer }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.year }}</td>
+            <td>{% if car.kpp == 0 %}
+                    Механическая
+                {% elif car.kpp == 1 %}
+                    Автомат
+                {% else %}
+                    Робот
+                {% endif %}
+
+            </td>
+            <td>{{ car.color }}</td>
+        </tr>
+    {% endfor %}
+
+<form action="{% url 'main' %}"><br><br>
+    <input type="text" name="manufacturer" placeholder="производитель"><br><br>
+    <input type="text" name="model" placeholder="модель"><br><br>
+    <input type="number" name="year" placeholder="год выпуска"><br><br>
+    <select name="kpp">
+      <option value="" selected>Выберите коробку передач</option>
+      <option value="0">Механика</option>
+      <option value="1">Автомат</option>
+      <option value="2">Робот</option>
+    </select><br><br>
+    <input type="text" name="color" placeholder="цвет"><br><br>
+    <input type="submit">
+</form>
+
+<style>
+    table {
+        margin-bottom: 40px;
+        padding: 20px;
+        margin: 20px;
+    }
+</style>
