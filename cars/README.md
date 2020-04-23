@@ -1,9 +1,9 @@
-Cars.
+# Cars.
 [![Travis][build-badge]][build]
 
-[build-badge]: https://img.shields.io/travis/ githubname / DZ-D-10pav /master.png?style=flat-square
+[build-badge]: 
 
-[build]: https://travis-ci.org/ githubname / DZ-D-10pav
+[build]:
 
  Кланировать этот репо;
  Перейдите в папку репо cars;
